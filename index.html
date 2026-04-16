@@ -25,8 +25,39 @@
   <body>
 
     <!-- NAVBAR -->
-    <nav id="navbar">
-      <!-- contenido viene en siguiente commit -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+      <div class="container-fluid px-4">
+
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">A_Moralesv1.0</a>
+
+        <!-- Hamburger (mobile) -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="hamburger-icon">&#9776;</span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto gap-4">
+            <li class="nav-item">
+              <a class="nav-link" href="#sobre-contacto">SOBRE_MI</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#proyectos">Proyectos</a>
+            </li>
+          </ul>
+          <a class="btn btn-nav-contacto" href="#sobre-contacto">Contacto</a>
+        </div>
+
+      </div>
     </nav>
 
     <!-- HERO -->
