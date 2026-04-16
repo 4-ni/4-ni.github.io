@@ -388,7 +388,7 @@ a:hover {
   position: relative;
   display: inline-block;
   width: 100%;
-  max-width: 420px;
+  max-width: 580px;
 }
 
 /* Sombra offset efecto retro */
@@ -454,81 +454,36 @@ a:hover {
   margin-right: 4px;
 }
 
-/* --- Formulario contacto --- */
-.contact-form-wrapper {
+/* --- Info contacto (solo email) --- */
+.contact-info-wrapper {
   border: 2px solid var(--color-white);
   background-color: var(--color-bg);
   padding: 1.5rem;
   width: 100%;
 }
 
-.contact-form__top {
+.contact-info-email {
   display: flex;
+  align-items: center;
   gap: 0.8rem;
-  margin-bottom: 1rem;
 }
 
-.form-input {
-  flex: 1;
-  background-color: transparent;
-  border: 2px solid var(--color-gray);
+.contact-box-icon {
+  font-size: 1.1rem;
   color: var(--color-white);
-  font-family: var(--font-pixel);
-  font-size: 0.55rem;
-  padding: 0.6rem 0.8rem;
-  outline: none;
-  letter-spacing: 0.04em;
+  flex-shrink: 0;
 }
 
-.form-input::placeholder {
-  color: var(--color-gray);
-  font-family: var(--font-pixel);
-  font-size: 0.55rem;
+.contact-info-email a {
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  color: var(--color-cream);
+  word-break: break-all;
+  transition: color 0.2s;
 }
 
-.form-input:focus {
-  border-color: var(--color-accent);
-}
-
-.btn-submit {
-  font-family: var(--font-pixel);
-  font-size: 0.55rem;
-  background-color: transparent;
-  color: var(--color-white);
-  border: 2px solid var(--color-white);
-  padding: 0.6rem 1rem;
-  letter-spacing: 0.05em;
-  white-space: nowrap;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-.btn-submit:hover {
-  background-color: var(--color-accent);
-  color: var(--color-bg);
-  border-color: var(--color-accent);
-}
-
-.form-textarea {
-  width: 100%;
-  background-color: transparent;
-  border: 2px solid var(--color-gray);
-  color: var(--color-white);
-  font-family: var(--font-pixel);
-  font-size: 0.55rem;
-  padding: 0.8rem;
-  outline: none;
-  resize: vertical;
-  letter-spacing: 0.04em;
-}
-
-.form-textarea::placeholder {
-  color: var(--color-gray);
-  font-family: var(--font-pixel);
-  font-size: 0.55rem;
-}
-
-.form-textarea:focus {
-  border-color: var(--color-accent);
+.contact-info-email a:hover {
+  color: var(--color-accent);
 }
 
 /* Responsive sobre mi + contacto */
