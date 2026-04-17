@@ -1,6 +1,6 @@
-# Ani Morales — Portfolio
+# Ani Morales — Portafolio
 
-Portfolio personal de Ani Morales, diseñadora UX/UI. Desarrollado con HTML, CSS y Bootstrap 5.
+Portafolio personal de Ani Morales, diseñadora UX/UI. Desarrollado con HTML, CSS y Bootstrap 5.
 
 ## Stack
 
@@ -13,7 +13,6 @@ Portfolio personal de Ani Morales, diseñadora UX/UI. Desarrollado con HTML, CSS
 ## Estructura
 
 ```
-ani_portafolio/
 ├── index.html
 ├── assets/
 │   ├── css/
@@ -35,7 +34,7 @@ ani_portafolio/
 
 ## Proyecto incluido
 
-**Digix — Educación Online**  
+**Digix — Educación Online**
 Diseño UX/UI de plataforma EdTech. Incluye análisis heurístico (10 principios de Nielsen), arquitectura de información y propuesta de interfaz responsive.
 
 ## Deploy
