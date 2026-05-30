@@ -14,10 +14,12 @@ Portafolio personal de Ani Morales, diseñadora UX/UI. Desarrollado con HTML, CS
 
 ```
 ├── index.html
+├── cv.html
 ├── assets/
 │   ├── css/
 │   │   └── styles.css
 │   ├── images/
+│   │   ├── ascii_ani.png
 │   │   ├── digix-cover.jpg
 │   │   ├── modulo3-cover.jpg
 │   │   ├── modulo4-cover.jpg
@@ -32,9 +34,14 @@ Portafolio personal de Ani Morales, diseñadora UX/UI. Desarrollado con HTML, CS
 └── README.md
 ```
 
-## Secciones
+## Páginas
 
-- **Hero** — Presentación centrada con nombre, rol y descripción
+- **index.html** — Portafolio principal
+- **cv.html** — Currículum en HTML exportable a PDF (A4, una página)
+
+## Secciones del portafolio
+
+- **Hero** — Presentación centrada con nombre, rol, descripción y botones (Contacto, Ver Proyectos, Descargar CV)
 - **Proyectos** — Tres casos de estudio UX/UI con portada y descripción
 - **Análisis de Caso** — Documentación completa del proyecto UX4ALL
 - **Sobre mi** — Perfil, herramientas y skills
