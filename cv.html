@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV — Ana Morales Martínez | Diseñadora UX/UI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ---- Variables ---- */
+    :root {
+      --ink:    #17191d;
+      --muted:  #17191d;
+      --bg:     #ffffff;
+      --font-t: 'Montserrat', sans-serif;
+      --font-b: 'EB Garamond', serif;
+    }
+
+    /* ---- Reset ---- */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ---- Shell (pantalla) ---- */
+    body {
+      background: #e8e8e8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      font-family: var(--font-b);
+      color: var(--ink);
+    }
+
+    /* ---- Botón imprimir ---- */
+    .btn-print {
+      font-family: var(--font-t);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--bg);
+      background: var(--ink);
+      border: 2px solid var(--ink);
+      padding: 0.55rem 1.4rem;
+      cursor: pointer;
+      margin-bottom: 1.5rem;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-print:hover {
+      background: transparent;
+      color: var(--ink);
+    }
+
+    /* ---- Página A4 ---- */
+    .cv {
+      background: var(--bg);
+      width: 210mm;
+      padding: 18mm 20mm 18mm 20mm;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    @media screen {
+      .cv {
+        min-height: 297mm;
+      }
+    }
+
+    /* ---- Header ---- */
+    .cv-header {
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 14px;
+      margin-bottom: 20px;
+    }
+
+    .cv-name {
+      font-family: var(--font-t);
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+
+    .cv-role {
+      font-family: var(--font-t);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.55;
+      margin-top: 6px;
+      margin-bottom: 12px;
+    }
+
+    .cv-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 1.6rem;
+      font-family: var(--font-t);
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .cv-contacts a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .cv-contacts span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    /* ---- Perfil ---- */
+    .cv-perfil {
+      font-family: var(--font-b);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--ink);
+      border-left: 2px solid var(--ink);
+      padding-left: 14px;
+      margin-bottom: 24px;
+    }
+
+    /* ---- Body dos columnas ---- */
+    .cv-body {
+      display: grid;
+      grid-template-columns: 1fr 36%;
+      gap: 0 32px;
+      flex: 1;
+    }
+
+    /* ---- Sección genérica ---- */
+    .cv-section {
+      margin-bottom: 26px;
+    }
+
+    .cv-section-title {
+      font-family: var(--font-t);
+      font-size: 0.63rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink);
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 5px;
+      margin-bottom: 14px;
+    }
+
+    /* ---- Proyectos ---- */
+    .proyecto {
+      margin-bottom: 20px;
+    }
+
+    .proyecto-title {
+      font-family: var(--font-t);
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 5px;
+    }
+
+    .proyecto-desc {
+      font-family: var(--font-b);
+      font-size: 1rem;
+      line-height: 1.65;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .proyecto-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .tag {
+      font-family: var(--font-t);
+      font-size: 0.56rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      border: 1px solid var(--ink);
+      padding: 3px 8px;
+      color: var(--ink);
+    }
+
+    /* ---- Columna derecha ---- */
+    .cv-right .cv-section-title {
+      margin-top: 0;
+    }
+
+    .cv-item {
+      margin-bottom: 10px;
+    }
+
+    .cv-item-title {
+      font-family: var(--font-t);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+
+    .cv-item-sub {
+      font-family: var(--font-b);
+      font-size: 0.96rem;
+      color: var(--ink);
+      opacity: 0.75;
+    }
+
+    .cv-item-date {
+      font-family: var(--font-t);
+      font-size: 0.65rem;
+      font-weight: 500;
+      opacity: 0.5;
+      margin-top: 2px;
+    }
+
+    .skills-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .skills-list li {
+      font-family: var(--font-b);
+      font-size: 1rem;
+      color: var(--ink);
+      line-height: 1.4;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .skills-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      font-size: 0.7rem;
+      opacity: 0.4;
+    }
+
+    .tools-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tool {
+      font-family: var(--font-t);
+      font-size: 0.7rem;
+      font-weight: 600;
+      border: 1.5px solid var(--ink);
+      padding: 4px 10px;
+      color: var(--ink);
+    }
+
+    .cv-portfolio-link {
+      font-family: var(--font-t);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--ink);
+    }
+
+    /* ---- Print ---- */
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    @media print {
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      html, body {
+        width: 210mm !important;
+        height: 297mm !important;
+        overflow: hidden !important;
+        display: block !important;
+        background: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .btn-print {
+        display: none !important;
+      }
+
+      .cv {
+        width: 210mm !important;
+        height: 297mm !important;
+        overflow: hidden !important;
+        min-height: 0 !important;
+        padding: 13mm 16mm !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+
+      .cv-body {
+        display: grid !important;
+        grid-template-columns: 1fr 36% !important;
+        gap: 0 32px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="btn-print" onclick="window.print()">Descargar PDF</button>
+
+  <main class="cv">
+
+    <!-- HEADER -->
+    <header class="cv-header">
+      <h1 class="cv-name">Ana Morales Martínez</h1>
+      <p class="cv-role">Diseñadora UX/UI</p>
+      <div class="cv-contacts">
+        <span>Santiago de Chile</span>
+        <span><a href="mailto:anaalexiam2@gmail.com">anaalexiam2@gmail.com</a></span>
+        <span><a href="https://www.linkedin.com/in/ani-morales" target="_blank">linkedin.com/in/ani-morales</a></span>
+        <span><a href="https://github.com/4-ni" target="_blank">github.com/4-ni</a></span>
+        <span><a href="https://4-ni.github.io" target="_blank">4-ni.github.io</a></span>
+      </div>
+    </header>
+
+    <!-- PERFIL -->
+    <p class="cv-perfil">
+      Diseñadora UX/UI con formación en Talento Digital SENCE, orientada a crear experiencias digitales intuitivas, limpias y centradas en el usuario. Interés especial en la intersección entre la estética moderna y la accesibilidad funcional. Con práctica en metodología DCU de punta a punta: desde la investigación con usuarios reales hasta el prototipado y la evaluación heurística.
+    </p>
+
+    <!-- CUERPO DOS COLUMNAS -->
+    <div class="cv-body">
+
+      <!-- COLUMNA IZQUIERDA: PROYECTOS -->
+      <div class="cv-left">
+        <section class="cv-section">
+          <h2 class="cv-section-title">Proyectos</h2>
+
+          <div class="proyecto">
+            <p class="proyecto-title">UX4ALL — Diseño de Plataforma Educativa Inclusiva</p>
+            <p class="proyecto-desc">Diseño completo de plataforma de aprendizaje online aplicando DCU en todas sus etapas. Investigación con 19 usuarios, propuesta accesible para audiencias con neurodivergencia y discapacidades visuales, 12 pantallas wireframeadas y evaluación con 10 heurísticas de Nielsen.</p>
+            <div class="proyecto-tags">
+              <span class="tag">DCU</span>
+              <span class="tag">User Research</span>
+              <span class="tag">Wireframing</span>
+              <span class="tag">Evaluación Heurística</span>
+              <span class="tag">Accesibilidad</span>
+              <span class="tag">Figma</span>
+            </div>
+          </div>
+
+          <div class="proyecto">
+            <p class="proyecto-title">Digix — Plataforma EdTech de Cursos Online</p>
+            <p class="proyecto-desc">Diseño UX/UI de plataforma de cursos online. Análisis heurístico basado en los 10 principios de Nielsen, arquitectura de información, sitemap y propuesta de interfaz responsive para mobile y desktop.</p>
+            <div class="proyecto-tags">
+              <span class="tag">Análisis Heurístico</span>
+              <span class="tag">Arquitectura de Información</span>
+              <span class="tag">UI Design</span>
+              <span class="tag">Wireframes</span>
+            </div>
+          </div>
+
+          <div class="proyecto">
+            <p class="proyecto-title">Diseño Centrado en el Usuario</p>
+            <p class="proyecto-desc">Aplicación práctica del enfoque DCU, metodología iterativa que sitúa a las personas en el centro del proceso de diseño. Investigación de necesidades, capacidades y contexto de usuarios para crear soluciones accesibles y significativas.</p>
+            <div class="proyecto-tags">
+              <span class="tag">DCU</span>
+              <span class="tag">User Research</span>
+              <span class="tag">Diseño Iterativo</span>
+            </div>
+          </div>
+
+          <div class="proyecto">
+            <p class="proyecto-title">Arquitectura de la Información</p>
+            <p class="proyecto-desc">Estudio y aplicación de los fundamentos de la AI: organización de contenidos, navegación, etiquetado, búsqueda y clasificación taxonómica en entornos digitales.</p>
+            <div class="proyecto-tags">
+              <span class="tag">Arquitectura de Información</span>
+              <span class="tag">Navegación</span>
+              <span class="tag">UX Research</span>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- COLUMNA DERECHA -->
+      <div class="cv-right">
+
+        <section class="cv-section">
+          <h2 class="cv-section-title">Formación</h2>
+          <div class="cv-item">
+            <p class="cv-item-title">Diseño UX/UI</p>
+            <p class="cv-item-sub">Talento Digital — SENCE</p>
+            <p class="cv-item-date">2025 – 2026</p>
+          </div>
+        </section>
+
+        <section class="cv-section">
+          <h2 class="cv-section-title">Herramientas</h2>
+          <div class="tools-grid">
+            <span class="tool">Figma</span>
+            <span class="tool">Affinity</span>
+            <span class="tool">Maze</span>
+            <span class="tool">HTML</span>
+            <span class="tool">CSS</span>
+          </div>
+        </section>
+
+        <section class="cv-section">
+          <h2 class="cv-section-title">Metodologías</h2>
+          <ul class="skills-list">
+            <li>Diseño Centrado en el Usuario (DCU)</li>
+            <li>User Research y Entrevistas</li>
+            <li>Análisis Heurístico (Nielsen)</li>
+            <li>Wireframing y Prototipado</li>
+            <li>Arquitectura de Información</li>
+            <li>Pruebas de Usabilidad</li>
+            <li>Design Thinking</li>
+          </ul>
+        </section>
+
+        <section class="cv-section">
+          <h2 class="cv-section-title">Portafolio</h2>
+          <a class="cv-portfolio-link" href="https://4-ni.github.io" target="_blank">4-ni.github.io</a>
+        </section>
+
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>
