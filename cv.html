@@ -67,6 +67,45 @@
       }
     }
 
+    @media screen and (max-width: 640px) {
+      body {
+        padding: 0;
+      }
+
+      .btn-print {
+        width: 100%;
+        margin-bottom: 0;
+      }
+
+      .cv {
+        width: 100% !important;
+        min-height: auto !important;
+        padding: 8vw !important;
+      }
+
+      .cv-name {
+        font-size: 1.6rem;
+      }
+
+      .cv-role {
+        font-size: 0.65rem;
+      }
+
+      .cv-contacts {
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .cv-body {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .cv-right {
+        margin-top: 8px;
+      }
+    }
+
     /* ---- Header ---- */
     .cv-header {
       border-bottom: 2px solid var(--ink);
