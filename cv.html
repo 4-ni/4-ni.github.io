@@ -32,23 +32,42 @@
       color: var(--ink);
     }
 
-    /* ---- Botón imprimir ---- */
-    .btn-print {
+    /* ---- Botones de acción ---- */
+    .cv-actions {
+      display: flex;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-print, .btn-back {
       font-family: var(--font-t);
       font-size: 0.78rem;
       font-weight: 700;
       letter-spacing: 0.06em;
-      color: var(--bg);
-      background: var(--ink);
       border: 2px solid var(--ink);
       padding: 0.55rem 1.4rem;
       cursor: pointer;
-      margin-bottom: 1.5rem;
       transition: background 0.2s, color 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-print {
+      color: var(--bg);
+      background: var(--ink);
     }
     .btn-print:hover {
       background: transparent;
       color: var(--ink);
+    }
+
+    .btn-back {
+      color: var(--ink);
+      background: transparent;
+    }
+    .btn-back:hover {
+      background: var(--ink);
+      color: var(--bg);
     }
 
     /* ---- Página A4 ---- */
@@ -72,8 +91,13 @@
         padding: 0;
       }
 
-      .btn-print {
+      .cv-actions {
+        flex-direction: column;
+      }
+
+      .btn-print, .btn-back {
         width: 100%;
+        text-align: center;
         margin-bottom: 0;
       }
 
@@ -329,7 +353,7 @@
         margin: 0 !important;
       }
 
-      .btn-print {
+      .cv-actions {
         display: none !important;
       }
 
@@ -355,7 +379,10 @@
 </head>
 <body>
 
-  <button class="btn-print" onclick="window.print()">Descargar PDF</button>
+  <div class="cv-actions">
+    <a href="index.html" class="btn-back">← Portafolio</a>
+    <button class="btn-print" onclick="window.print()">Descargar PDF</button>
+  </div>
 
   <main class="cv">
 
